@@ -1,0 +1,31 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+#clock {
+  height: 500px;
+  width: cover;
+  color: white;
+  margin: 0;
+  background-color: rgba(110, 234, 121, 0.5);
+  text-align: center;
+  line-height: 300px;
+  font-family: "Andale Mono", sans-serif;
+  font-size: 80px;
+}
+#myProgress {
+  width: 500px;
+  height: 5px;
+  position: relative;
+  background-color: #ddd;
+  top: -250px;
+  left: 30%;
+  right: 25%;
+  border-radius: 35%;
+}
+#myBar {
+  background-color: #4CAF50;
+  width: 100px;
+  height: 5px;
+  position: absolute;
+}
