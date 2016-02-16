@@ -24,7 +24,7 @@ function displayTime() {
     var color = document.querySelector('#clock');
 
     if(isHovering){
-    color.textContent = hours.toString(16) + ":" + minutes.toString(16) + ":" + seconds.toString(16);
+    color.textContent = ("0" + hours.toString(16)).slice(-2) + ":" + ("0" + minutes.toString(16)).slice(-2) + ":" + ("0" + seconds.toString(16)).slice(-2);
     hextime = hours.toString(16) + minutes.toString(16) + seconds.toString(16);
     console.log(hextime)
   }

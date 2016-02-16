@@ -16,7 +16,7 @@ body {
 }
 #myProgress {
   width: 500px;
-  height: 5px;
+  height: 1.5px;
   position: relative;
   background-color: #ddd;
   top: -800px;
@@ -27,6 +27,6 @@ body {
 #myBar {
   background-color: #4CAF50;
   width: 100px;
-  height: 5px;
+  height: 1.5px;
   position: absolute;
 }
