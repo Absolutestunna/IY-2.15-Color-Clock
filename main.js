@@ -10,6 +10,12 @@ function displayTime() {
   var seconds = currentTime.getSeconds();
   console.log(currentTime);
 
+  var hexhour = ("0" + hours.toString(16)).slice(-2);
+  var hexmin = ("0" + minutes.toString(16)).slice(-2);
+  var hexsec = ("0" + seconds.toString(16)).slice(-2);
+  var col = ":"
+
+
   if (seconds < 10) {
     seconds = "0" + seconds;
   }  // add zero in front of numbers < 10
@@ -23,11 +29,14 @@ function displayTime() {
     document.getElementById('clock').textContent = hours + ":" + minutes + ":" + seconds;
     var color = document.querySelector('#clock');
 
+
     if(isHovering){
-    color.textContent = ("0" + hours.toString(16)).slice(-2) + ":" + ("0" + minutes.toString(16)).slice(-2) + ":" + ("0" + seconds.toString(16)).slice(-2);
-    hextime = hours.toString(16) + minutes.toString(16) + seconds.toString(16);
-    console.log(hextime)
+      color.textContent = hexhour + col + hexmin + col + hexsec;
+      hextime = hours.toString(16) + minutes.toString(16) + seconds.toString(16);
+      console.log(hextime)
+
   }
+
 
 }
 function check() {
@@ -40,7 +49,8 @@ function check() {
     if (counter == 100){
       widthSel.style.width = 0;
     } else {
-      counter = (seconds/60)*100;
+      counter = Math.floor((seconds/60)*100);
+      console.log("counter is: ", counter)
       widthSel.style.width = counter + '%';
 
   }
@@ -60,9 +70,11 @@ function trackMouseOff() {
   background.style.backgroundColor = "rgba(234, 110, 203, 0.6)";
 }
 
+
 clockCol.addEventListener('mouseenter', trackMouseOn);
 clockCol.addEventListener('mouseleave', trackMouseOff);
 
 displayTime();
 setInterval(displayTime, 1000);
 setInterval(check, 1000);
+// setInterval(changeBackgroundColor, 1000)
