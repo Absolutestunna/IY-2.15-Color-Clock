@@ -3,7 +3,7 @@ body {
   padding: 0;
 }
 #clock {
-  height: 500px;
+  height: 1024px;
   width: cover;
   color: white;
   margin: 0;
@@ -12,13 +12,14 @@ body {
   line-height: 300px;
   font-family: "Andale Mono", sans-serif;
   font-size: 80px;
+  padding-top: 150px;
 }
 #myProgress {
   width: 500px;
   height: 5px;
   position: relative;
   background-color: #ddd;
-  top: -250px;
+  top: -800px;
   left: 30%;
   right: 25%;
   border-radius: 7%;
