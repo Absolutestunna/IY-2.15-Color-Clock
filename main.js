@@ -1,6 +1,6 @@
 var isHovering = false;
 var clockCol = document.querySelector('#clock');
-
+var hextime = 0;
 
 function displayTime() {
 
@@ -8,7 +8,7 @@ function displayTime() {
   var hours = currentTime.getHours();
   var minutes = currentTime.getMinutes();
   var seconds = currentTime.getSeconds();
-  // console.log(currentTime);
+  console.log(currentTime);
 
   if (seconds < 10) {
     seconds = "0" + seconds;
@@ -25,37 +25,36 @@ function displayTime() {
 
     if(isHovering){
     color.textContent = hours.toString(16) + ":" + minutes.toString(16) + ":" + seconds.toString(16);
+    hextime = hours.toString(16) + minutes.toString(16) + seconds.toString(16);
+    console.log(hextime)
   }
 
 }
 function check() {
   var widthSel = document.querySelector("#myBar");
-  console.log(widthSel);
   var currentTime = new Date();
   var seconds = currentTime.getSeconds();
   var counter = 0;
 
 
     if (counter == 100){
-      widthSel.style.width
+      widthSel.style.width = 0;
     } else {
       counter = (seconds/60)*100;
-      console.log(counter)
       widthSel.style.width = counter + '%';
-
 
   }
 }
 
 function trackMouseOn() {
-  // console.log('backgroundColor');
+  console.log('backgroundColor');
   isHovering = true;
   var background = document.querySelector('#clock');
   background.style.backgroundColor = "rgba(231, 142, 32, 0.6)";
 }
 
 function trackMouseOff() {
-  // console.log('mouseleave');
+  console.log('mouseleave');
   isHovering = false;
   var background = document.querySelector('#clock');
   background.style.backgroundColor = "rgba(234, 110, 203, 0.6)";
